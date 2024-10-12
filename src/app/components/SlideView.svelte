@@ -3,11 +3,11 @@
   import { transition } from '$lib/transition'
   import slides from '$slides'
 
+  import { beforeNavigate } from '$app/navigation'
+
   import { resolveTemplate } from '../../templates'
 
   import '../../styles/slides.css'
-
-  const { in: inTransition, out: outTransition } = transition
 
   interface Props {
     scale?: boolean
@@ -17,6 +17,17 @@
   let { scale = false, slideIndex }: Props = $props()
   let currentSlide = $derived(slides[slideIndex])
   let Slide = $derived(resolveTemplate(currentSlide))
+
+  // Keep track of if we're moving to the next/previous slide to adjust the transition direction.
+  let direction = $state(1)
+  let { in: inTransition, out: outTransition } = $derived(transition(direction))
+
+  beforeNavigate(({ from, to }) => {
+    const previousSlideIndex = Number.parseInt(from?.params?.index ?? '0')
+    const nextSlideIndex = Number.parseInt(to?.params?.index ?? '0')
+
+    direction = nextSlideIndex - previousSlideIndex > 0 ? 1 : -1
+  })
 
   let previewWidth = $state(1)
   let previewHeight = $state(1)
