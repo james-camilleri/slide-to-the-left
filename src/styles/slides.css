@@ -1,17 +1,18 @@
 :root {
   --white: hsl(0deg 0% 100%);
   --light: hsl(108deg 22% 95%);
-  --grey: rgb(100 100 110);
-  --dark: hsl(176deg 10% 19%);
-  --black: hsl(0deg 0% 0%);
+  --grey: hsl(0deg 0% 78%);
+  --dark: hsl(0deg 0% 10%);
 
-  --orange: hsl(18deg 100% 62%);
-  --teal: hsl(185deg 84% 38%);
-  --vanilla: hsl(48deg 67% 79%);
+  --svelte-orange: hsl(12deg 95% 62%);
+  --svelte-orange-semi: hsl(12deg 95% 62% / 60%);
+  --yellow-orange: hsl(32deg 95% 62%);
+  --dark-orange: hsl(12deg 95% 10%);
+  --pink: hsl(342deg 95% 50%);
 
-  --primary: var(--orange);
-  --secondary: var(--teal);
-  --tertiary: var(--vanilla);
+  --primary: var(--svelte-orange);
+  --secondary: var(--yellow-orange);
+  --tertiary: var(--pink);
   --background: var(--light);
   --foreground: var(--dark);
 
