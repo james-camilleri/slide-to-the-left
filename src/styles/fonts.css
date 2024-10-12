@@ -1,0 +1,57 @@
+@font-face {
+  font-family: rem;
+  font-weight: 100 900;
+  src: url('/rem.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: rem;
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('/rem-italic.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'josefin slab';
+  font-weight: 100 700;
+  src: url('/josefin-slab.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'josefin slab';
+  font-style: italic;
+  font-weight: 100 700;
+  src: url('/josefin-slab-italic.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'fira code';
+  font-weight: 100 700;
+  src: url('/fira-code.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --font-body: 'rem', sans-serif;
+  --font-heading: 'josefin slab', sans-serif;
+  --font-monospace: 'fira code', monospace;
+}
+
+html {
+  font-family: var(--font-body), Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+code {
+  font-feature-settings: 'calt';
+  font-variant-ligatures: contextual;
+}

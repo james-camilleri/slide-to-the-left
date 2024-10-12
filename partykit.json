@@ -1,0 +1,6 @@
+{
+  "$schema": "https://www.partykit.io/schema.json",
+  "name": "slides",
+  "main": "socket-server/index.ts",
+  "compatibilityDate": "2024-07-07"
+}

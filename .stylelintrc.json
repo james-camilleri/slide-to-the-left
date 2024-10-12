@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-prettier-scss",
+    "stylelint-config-recess-order",
+    "stylelint-config-html/svelte"
+  ],
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "custom-property-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "selector-no-qualifying-type": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  }
+}

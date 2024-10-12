@@ -1,0 +1,54 @@
+:root {
+  --white: hsl(0deg 0% 100%);
+  --light: hsl(108deg 22% 95%);
+  --grey: rgb(100 100 110);
+  --dark: hsl(176deg 10% 19%);
+  --black: hsl(0deg 0% 0%);
+
+  --orange: hsl(18deg 100% 62%);
+  --teal: hsl(185deg 84% 38%);
+  --vanilla: hsl(48deg 67% 79%);
+
+  --primary: var(--orange);
+  --secondary: var(--teal);
+  --tertiary: var(--vanilla);
+  --background: var(--light);
+  --foreground: var(--dark);
+
+  --base-font-size: 36px;
+  --heading-font-size: 80px;
+}
+
+.slide {
+  padding: 3em;
+  font-size: var(--base-font-size);
+  color: var(--foreground);
+
+  &.dark {
+    color: var(--background);
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: calc(var(--heading-font-size));
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;
+    text-decoration-color: var(--primary);
+    text-underline-offset: 0.2em;
+  }
+
+  h2 {
+    margin-top: -1.7em;
+    margin-bottom: 2em;
+    font-size: calc(var(--heading-font-size) / 2.2);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  a,
+  a:visited {
+    color: var(--primary);
+  }
+}
