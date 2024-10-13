@@ -1,21 +1,36 @@
 {
   "extends": [
     "stylelint-config-standard-scss",
-    "stylelint-config-sass-guidelines",
-    "stylelint-config-prettier-scss",
     "stylelint-config-recess-order",
     "stylelint-config-html/svelte"
   ],
   "rules": {
-    "order/properties-alphabetical-order": null,
+    "at-rule-disallowed-list": [["debug"]],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment", "blockless-after-same-name-blockless"]
+      }
+    ],
+    "color-named": "never",
     "custom-property-empty-line-before": null,
     "declaration-empty-line-before": null,
-    "selector-no-qualifying-type": null,
-    "selector-pseudo-class-no-unknown": [
-      true,
+    "no-descending-specificity": null,
+    "max-nesting-depth": [
+      1,
       {
-        "ignorePseudoClasses": ["global"]
+        "ignore": ["pseudo-classes"],
+        "ignoreRules": ["&::before", "&::after"],
+        "ignoreAtRules": ["each", "media", "supports", "include"]
       }
-    ]
+    ],
+    "order/properties-alphabetical-order": null,
+    "scss/at-import-partial-extension-disallowed-list": ["scss"],
+    "scss/selector-no-redundant-nesting-selector": [true],
+    "selector-max-compound-selectors": 3,
+    "selector-max-id": 0,
+    "selector-no-qualifying-type": null,
+    "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }]
   }
 }
