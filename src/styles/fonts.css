@@ -14,17 +14,9 @@
 }
 
 @font-face {
-  font-family: 'josefin slab';
-  font-weight: 100 700;
-  src: url('/josefin-slab.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'josefin slab';
-  font-style: italic;
-  font-weight: 100 700;
-  src: url('/josefin-slab-italic.woff2') format('woff2');
+  font-family: 'hepta slab';
+  font-weight: 100 900;
+  src: url('/hepta-slab.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -37,7 +29,7 @@
 
 :root {
   --font-body: 'rem', sans-serif;
-  --font-heading: 'josefin slab', sans-serif;
+  --font-heading: 'hepta slab', sans-serif;
   --font-monospace: 'fira code', monospace;
 }
 
@@ -49,6 +41,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading), Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
 }
 
 code {
