@@ -1,26 +1,22 @@
 <script lang="ts">
   import type { Slide } from '$lib/slide'
 
-  // We're not using any of the props for this template.
-  let props: Slide = $props()
+  import Title from './common-components/Title.svelte'
+
+  let { h1, h2 }: Slide = $props()
 </script>
 
 <div class="slide">
-  <span>fin.</span>
+  <Title {h1} {h2} />
 </div>
 
 <style>
   .slide {
+    --text-align: center;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
-  }
-
-  span {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--primary);
   }
 </style>

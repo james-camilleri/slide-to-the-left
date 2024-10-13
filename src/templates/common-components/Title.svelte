@@ -14,6 +14,11 @@
 {/if}
 
 <style>
+  h1,
+  h2 {
+    text-align: var(--text-align, start);
+  }
+
   .h2-only {
     margin-block-start: 0;
   }

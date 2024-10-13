@@ -30,6 +30,13 @@
 </div>
 
 <style>
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+    align-items: start;
+  }
+
   p {
     margin: 0;
     text-align: var(--text-align, start);
