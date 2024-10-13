@@ -9,13 +9,14 @@
   const ASPECT_RATIO = 16 / 8.5
 
   interface Props {
-    rows: number
     blockSize: number
+    dark: boolean
     direction: { current: number }
     random: SeededRandom
+    rows: number
   }
 
-  let { direction, random, rows: blocksY, blockSize }: Props = $props()
+  let { direction, random, rows: blocksY, blockSize, dark }: Props = $props()
 
   let blocksX = Math.ceil(blocksY * ASPECT_RATIO)
   let offsetX = ((blocksX / 2) * blockSize - blockSize / 2) * -1
@@ -71,13 +72,13 @@
     blocks.forEach((block) => {
       const index = [block.column, block.row].join(':')
       block.rotate()
-      block.setColour(orangeBlocks.includes(index))
+      block.setColour(!dark && orangeBlocks.includes(index))
     })
   })
 </script>
 
-<T.PointLight position={[15, 8, 15]} intensity={800} color="#fff" />
-<T.PointLight position={[0, 8, 15]} intensity={300} color="#eef" />
+<T.PointLight position={[15, 8, 15]} intensity={dark ? 400 : 800} color="#fff" />
+<T.PointLight position={[0, 8, 15]} intensity={dark ? 150 : 300} color="#eef" />
 
 <InstancedMesh limit={blocks.length}>
   <RoundedBoxGeometry args={[blockSize, blockSize, blockSize]} radius={0.02} />

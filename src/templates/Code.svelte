@@ -9,7 +9,7 @@
   let formattedCodePromise = $derived(
     codeToHtml(code?.source ?? '', {
       lang: code?.language ?? 'js',
-      theme: 'vesper',
+      theme: 'ayu-dark',
     }),
   )
 </script>
@@ -36,7 +36,7 @@
     width: 100%;
     margin: 0;
     overflow-x: hidden;
-    scrollbar-color: var(--react-blue);
+    scrollbar-color: var(--primary) var(--dark);
     scrollbar-width: thin;
     background-color: transparent !important;
   }

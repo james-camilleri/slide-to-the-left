@@ -21,10 +21,10 @@
   )
 </script>
 
-<div class="background" class:dark>
+<div class="background">
   <div class="canvas">
     <Canvas>
-      <Blocks rows={NO_OF_BLOCKS} blockSize={BLOCK_SIZE} {direction} {random} />
+      <Blocks rows={NO_OF_BLOCKS} blockSize={BLOCK_SIZE} {direction} {random} {dark} />
     </Canvas>
   </div>
 </div>
@@ -40,10 +40,6 @@
     overflow: hidden;
     background: var(--background);
     transition: background 0.7s ease-in;
-  }
-
-  .background.dark {
-    background: var(--foreground);
   }
 
   .canvas {
