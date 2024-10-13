@@ -4,6 +4,8 @@
   import { T } from '@threlte/core'
   import { Instance, InstancedMesh, RoundedBoxGeometry } from '@threlte/extras'
   import { Block } from './Block.svelte'
+  import { tweened } from 'svelte/motion'
+  import { fromStore } from 'svelte/store'
 
   const PADDING = 0
   const ASPECT_RATIO = 16 / 8.5
@@ -21,6 +23,16 @@
   let blocksX = Math.ceil(blocksY * ASPECT_RATIO)
   let offsetX = ((blocksX / 2) * blockSize - blockSize / 2) * -1
   let offsetY = ((blocksY / 2) * blockSize - blockSize / 2) * -1
+
+  const lightIntensityTopRightTweened = tweened(800)
+  const lightIntensityBottomLeftTweened = tweened(300)
+  let lightIntensityTopRight = $derived(fromStore(lightIntensityTopRightTweened))
+  let lightIntensityBottomLeft = $derived(fromStore(lightIntensityBottomLeftTweened))
+
+  $effect(() => {
+    lightIntensityTopRightTweened.set(dark ? 400 : 800)
+    lightIntensityBottomLeftTweened.set(dark ? 150 : 300)
+  })
 
   let blocks: Block[] = $state(
     (() => {
@@ -77,8 +89,8 @@
   })
 </script>
 
-<T.PointLight position={[15, 8, 15]} intensity={dark ? 400 : 800} color="#fff" />
-<T.PointLight position={[0, 8, 15]} intensity={dark ? 150 : 300} color="#eef" />
+<T.PointLight position={[15, 8, 15]} intensity={lightIntensityTopRight.current} color="#fff" />
+<T.PointLight position={[0, 8, 15]} intensity={lightIntensityBottomLeft.current} color="#eef" />
 
 <InstancedMesh limit={blocks.length}>
   <RoundedBoxGeometry args={[blockSize, blockSize, blockSize]} radius={0.02} />
