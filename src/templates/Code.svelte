@@ -43,7 +43,7 @@
 
   :global(code) {
     font-family: 'fira code', monospace;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-feature-settings: 'calt';
     font-variant-ligatures: contextual;
   }
