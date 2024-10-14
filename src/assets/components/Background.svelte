@@ -8,14 +8,14 @@
   import Blocks from './Blocks.svelte'
   import { createDirectionCalculator } from '$lib/direction.svelte'
 
-  let { currentSlideIndex, code, h1, h2 }: BackgroundProps = $props()
+  let { currentSlideIndex, code, dark: explicitDark, h1, h2 }: BackgroundProps = $props()
 
   const NO_OF_BLOCKS = 20
   const BLOCK_SIZE = 0.37
 
   const direction = createDirectionCalculator(() => currentSlideIndex)
 
-  let dark = $derived(!!code)
+  let dark = $derived(!!code || explicitDark)
   let random = $derived(
     new SeededRandom([currentSlideIndex, h1 ?? '', h2 ?? '', code ?? ''].join('')),
   )

@@ -11,7 +11,7 @@ export interface Slide {
 
   code?: {
     source: string
-    language: 'js' | 'ts' | 'html' | 'jsx' | 'tsx'
+    language: 'js' | 'ts' | 'html' | 'jsx' | 'tsx' | 'svelte'
   }
   component?: Component
   iframe?: string
@@ -20,6 +20,7 @@ export interface Slide {
 
   template?: TemplateName
   notes?: string[]
+  dark?: boolean
 }
 
 export interface BackgroundProps extends Slide {
