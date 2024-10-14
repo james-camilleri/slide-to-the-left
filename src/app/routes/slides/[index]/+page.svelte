@@ -67,6 +67,9 @@
       // Remote control.
       case 'r': {
         if (remoteConnectUrl) {
+          // Update remote URL with current slide every time this is triggered.
+          remoteConnectUrl = remoteConnectUrl.replace(/\/\d+(\?.*)/, `/${currentIndex}$1`)
+
           showRemoteQrCode = !showRemoteQrCode
           return
         }
@@ -76,13 +79,14 @@
           slides.length,
           updateSlideUrl,
         )
+
         remote.onStatusUpdate((status) => {
           if (status === 'new-connection') {
             showRemoteQrCode = false
           }
         })
 
-        remoteConnectUrl = `https://${$page.url.host}/remote/${presentationId}?secret=${secret}`
+        remoteConnectUrl = `https://${$page.url.host}/remote/${presentationId}/${currentIndex}?secret=${secret}`
         showRemoteQrCode = true
 
         break
@@ -96,7 +100,9 @@
           updateSlideUrl,
         )
 
-        window.open(`https://${$page.url.host}/present/${presentationId}?secret=${secret}`)
+        window.open(
+          `https://${$page.url.host}/present/${presentationId}/${currentIndex}?secret=${secret}`,
+        )
         break
       }
 

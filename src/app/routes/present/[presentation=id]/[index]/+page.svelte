@@ -5,6 +5,7 @@
   import { fade } from 'svelte/transition'
   import SvelteMarkdown from 'svelte-markdown'
 
+  import { goto } from '$app/navigation'
   import SlideView from '$internal/components/SlideView.svelte'
   import Timer from '$internal/components/Timer.svelte'
   import { getNextSlide } from '$internal/utils/navigation'
@@ -13,13 +14,13 @@
 
   let { data }: { data: PageData } = $props()
 
-  let slideIndex = $state(0)
+  let slideIndex = $derived(data.slideIndex)
   let { notes = [] } = $derived(slides[slideIndex])
   let timerStartTime: number | undefined = $state()
 
   onMount(() => {
     remote.connect(data.presentation, data.secret, (index) => {
-      slideIndex = index
+      goto(`./${index}`)
     })
   })
 
@@ -67,7 +68,7 @@
 <style>
   .presenter {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr min-content;
     gap: 5em;
     width: 100vw;
     height: 100vh;
