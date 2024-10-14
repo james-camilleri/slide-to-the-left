@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 891 881.06">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#New_Pattern_Swatch_3);
+      }
+
+      .cls-2 {
+        fill: #f1f5ef;
+      }
+
+      .cls-3 {
+        fill: #faa442;
+      }
+
+      .cls-4 {
+        fill: #f9064f;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke: url(#New_Pattern_Swatch_5);
+      }
+
+      .cls-6, .cls-7 {
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-8, .cls-9 {
+        font-family: FiraCode-Medium, 'Fira Code';
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .cls-8, .cls-10 {
+        fill: url(#New_Pattern_Swatch_6);
+      }
+
+      .cls-11 {
+        fill: url(#New_Pattern_Swatch_8);
+      }
+
+      .cls-7 {
+        stroke: url(#New_Pattern_Swatch_3);
+      }
+
+      .cls-12 {
+        fill: #1a1a1a;
+      }
+
+      .cls-13 {
+        fill: #fa6742;
+      }
+
+      .cls-14 {
+        fill: #c7c7c7;
+      }
+
+      .cls-15 {
+        fill: url(#New_Pattern_Swatch_5);
+      }
+
+      .cls-16 {
+        fill: url(#New_Pattern_Swatch_2);
+      }
+    </style>
+    <pattern id="New_Pattern_Swatch_2" data-name="New Pattern Swatch 2" x="0" y="0" width="78" height="78" patternTransform="translate(-109 -125)" patternUnits="userSpaceOnUse" viewBox="0 0 78 78">
+      <g>
+        <rect class="cls-5" width="78" height="78"/>
+        <rect class="cls-13" width="78" height="78"/>
+      </g>
+    </pattern>
+    <pattern id="New_Pattern_Swatch_5" data-name="New Pattern Swatch 5" x="0" y="0" width="78" height="78" patternTransform="translate(-109 -125)" patternUnits="userSpaceOnUse" viewBox="0 0 78 78">
+      <g>
+        <rect class="cls-5" width="78" height="78"/>
+        <rect class="cls-4" width="78" height="78"/>
+      </g>
+    </pattern>
+    <pattern id="New_Pattern_Swatch_6" data-name="New Pattern Swatch 6" x="0" y="0" width="78" height="78" patternTransform="translate(-109 -125)" patternUnits="userSpaceOnUse" viewBox="0 0 78 78">
+      <g>
+        <rect class="cls-5" width="78" height="78"/>
+        <rect class="cls-2" width="78" height="78"/>
+      </g>
+    </pattern>
+    <pattern id="New_Pattern_Swatch_8" data-name="New Pattern Swatch 8" x="0" y="0" width="78" height="78" patternTransform="translate(-109 -125)" patternUnits="userSpaceOnUse" viewBox="0 0 78 78">
+      <g>
+        <rect class="cls-5" x="0" width="78" height="78"/>
+        <rect class="cls-14" x="0" width="78" height="78"/>
+      </g>
+    </pattern>
+    <pattern id="New_Pattern_Swatch_3" data-name="New Pattern Swatch 3" x="0" y="0" width="78" height="78" patternTransform="translate(-109 -125)" patternUnits="userSpaceOnUse" viewBox="0 0 78 78">
+      <g>
+        <rect class="cls-5" width="78" height="78"/>
+        <rect class="cls-3" width="78" height="78"/>
+      </g>
+    </pattern>
+  </defs>
+  <g id="content">
+    <g>
+      <rect class="cls-2" width="891" height="62" rx="6.17" ry="6.17"/>
+      <circle class="cls-12" cx="32" cy="31" r="16"/>
+      <text class="cls-9" transform="translate(66.56 41.93)"><tspan x="0" y="0">slide-to-the-left.slides.james.mt/</tspan><tspan class="cls-16" x="627.67" y="0">slides</tspan><tspan x="738.44" y="0">/</tspan><tspan class="cls-15" x="756.9" y="0">6</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-3" y="697.63" width="100" height="100"/>
+      <polygon class="cls-3" points="209 692 148.01 797.63 269.99 797.63 209 692"/>
+      <circle class="cls-3" cx="527" cy="748" r="52"/>
+      <polygon class="cls-3" points="368 693.62 311.61 734.59 333.15 800.88 402.85 800.88 424.39 734.59 368 693.62"/>
+      <text class="cls-8" transform="translate(.02 859.06)"><tspan x="0" y="0">templates</tspan></text>
+    </g>
+    <g>
+      <g>
+        <rect class="cls-11" x="0" y="165.5" width="346" height="384.7" rx="16.5" ry="16.5"/>
+        <g>
+          <rect class="cls-12" x="31.11" y="195.85" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="221.46" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="247.07" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="272.68" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="298.29" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="323.89" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-15" x="31.11" y="349.5" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="375.11" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="400.72" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="426.33" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="451.94" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="477.54" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+          <rect class="cls-12" x="31.11" y="503.15" width="283.78" height="16.69" rx="6.28" ry="6.28"/>
+        </g>
+      </g>
+      <text class="cls-8" transform="translate(30.91 151)"><tspan x="0" y="0">slides.ts</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-13" x="555" y="335" width="335" height="216" rx="12.6" ry="12.6"/>
+      <text class="cls-8" transform="translate(578.06 386.83)"><tspan x="0" y="0">SlideView </tspan><tspan x="0" y="36">component</tspan></text>
+    </g>
+    <rect class="cls-13" x="400" y="166" width="490" height="96" rx="12.6" ry="12.6"/>
+    <rect class="cls-15" x="736" y="188" width="132" height="52" rx="12.6" ry="12.6"/>
+    <rect class="cls-16" x="711" y="655" width="180" height="180" rx="12.6" ry="12.6"/>
+    <path class="cls-10" d="M615.14,646.94c4.72,0,9.55.45,14.52,1.35s9.51,2.46,13.64,4.68,7.32,5.33,9.57,9.32c2.26,3.99,3.04,9.1,2.35,15.35l-4.58,42.67c-.49,4.58.05,8.54,1.61,11.87s4.75,5.9,9.57,7.7,11.89,2.71,21.18,2.71v10.2c-9.3,0-16.36.92-21.18,2.76-4.82,1.84-8.01,4.44-9.57,7.81s-2.1,7.34-1.61,11.92l4.58,42.57c.62,6.17-.19,11.26-2.44,15.25-2.26,3.99-5.43,7.09-9.53,9.32-4.1,2.22-8.62,3.78-13.58,4.68s-9.8,1.35-14.52,1.35v-11.03c5.34,0,10.23-.52,14.67-1.56s7.93-2.85,10.46-5.41c2.53-2.57,3.55-6.1,3.07-10.62l-4.68-46.31c-.83-8.47.09-14.55,2.76-18.27,2.67-3.71,7.96-6.12,15.87-7.23-7.35-1.39-12.49-4.15-15.41-8.28-2.91-4.13-3.99-10.08-3.22-17.85l4.68-46.32c.48-4.44-.54-7.94-3.07-10.51s-6-4.39-10.41-5.47c-4.41-1.07-9.32-1.61-14.73-1.61v-11.03Z"/>
+    <text class="cls-8" transform="translate(726.06 812.83)"><tspan x="0" y="0">resolver</tspan></text>
+    <g>
+      <line class="cls-6" x1="547.41" y1="443" x2="346" y2="443"/>
+      <polygon class="cls-15" points="524.21 414.37 519.44 419.5 544.72 442.99 519.44 466.5 524.21 471.62 555 442.99 524.21 414.37"/>
+    </g>
+    <g>
+      <line class="cls-6" x1="775" y1="647.41" x2="775" y2="551"/>
+      <polygon class="cls-15" points="803.63 624.21 798.5 619.44 775.01 644.72 751.5 619.44 746.38 624.21 775.01 655 803.63 624.21"/>
+    </g>
+    <g>
+      <line class="cls-6" x1="835" y1="327.41" x2="835" y2="237"/>
+      <polygon class="cls-15" points="863.63 304.21 858.5 299.44 835.01 324.72 811.5 299.44 806.38 304.21 835.01 335 863.63 304.21"/>
+    </g>
+    <line class="cls-6" x1="835" y1="188" x2="835" y2="62"/>
+    <g>
+      <line class="cls-7" x1="832" y1="558.59" x2="832" y2="655"/>
+      <polygon class="cls-1" points="803.37 581.79 808.5 586.56 831.99 561.28 855.5 586.56 860.62 581.79 831.99 551 803.37 581.79"/>
+    </g>
+    <text class="cls-8" transform="translate(757.64 222.15)"><tspan x="0" y="0">param</tspan></text>
+    <text class="cls-8" transform="translate(438.75 223.15)"><tspan x="0" y="0">/slides route</tspan></text>
+  </g>
+</svg>
