@@ -3,9 +3,10 @@
 
   import { T } from '@threlte/core'
   import { Instance, InstancedMesh, RoundedBoxGeometry } from '@threlte/extras'
-  import { Block } from './Block.svelte'
   import { tweened } from 'svelte/motion'
   import { fromStore } from 'svelte/store'
+
+  import { Block } from './Block.svelte'
 
   const PADDING = 0
   const ASPECT_RATIO = 16 / 8.5

@@ -5,12 +5,13 @@
   import { fade } from 'svelte/transition'
   import SvelteMarkdown from 'svelte-markdown'
 
-  import { goto } from '$app/navigation'
   import SlideView from '$internal/components/SlideView.svelte'
   import Timer from '$internal/components/Timer.svelte'
   import { getNextSlide } from '$internal/utils/navigation'
   import { remote } from '$internal/utils/remote.svelte'
   import slides from '$slides'
+
+  import { goto } from '$app/navigation'
 
   let { data }: { data: PageData } = $props()
 

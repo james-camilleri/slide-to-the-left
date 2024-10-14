@@ -3,10 +3,10 @@
 
   import { Canvas } from '@threlte/core'
 
+  import { createDirectionCalculator } from '$lib/direction.svelte'
   import { SeededRandom } from '$lib/random'
 
   import Blocks from './Blocks.svelte'
-  import { createDirectionCalculator } from '$lib/direction.svelte'
 
   let { currentSlideIndex, code, dark: explicitDark, h1, h2 }: BackgroundProps = $props()
 

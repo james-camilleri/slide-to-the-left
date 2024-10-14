@@ -96,7 +96,7 @@ export default [
         },
       ],
 
-      'import/no-duplicates': null,
+      'import/no-duplicates': 'off',
 
       '@typescript-eslint/no-unused-vars': [
         'error',

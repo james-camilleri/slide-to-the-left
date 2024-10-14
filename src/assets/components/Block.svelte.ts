@@ -1,6 +1,7 @@
-import { SeededRandom } from '$lib/random'
 import { tweened } from 'svelte/motion'
 import { fromStore } from 'svelte/store'
+
+import { SeededRandom } from '$lib/random'
 
 interface Props {
   row: number
@@ -29,7 +30,6 @@ export class Block {
   #y: number
   #z: { current: number }
   #rotation = fromStore(this.#tweenedValues.rotation)
-  #isOrange = $state(false)
 
   #saturation = fromStore(this.#tweenedValues.saturation)
   #lightness = fromStore(this.#tweenedValues.lightness)
@@ -93,8 +93,6 @@ export class Block {
       this.#tweenedValues.lightness.set(10, { delay: this.#delay })
       this.#tweenedValues.lightIntensity.set(0, { delay: this.#delay })
     }
-
-    this.#isOrange = orange
   }
 
   rotate() {
