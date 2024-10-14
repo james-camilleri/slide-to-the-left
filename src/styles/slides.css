@@ -26,6 +26,11 @@
   font-size: var(--base-font-size);
   color: var(--foreground);
 
+  ::selection {
+    color: var(--dark);
+    background-color: var(--primary);
+  }
+
   &.dark {
     color: var(--background);
   }
