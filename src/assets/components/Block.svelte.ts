@@ -3,14 +3,24 @@ import { fromStore } from 'svelte/store'
 
 import { SeededRandom } from '$lib/random'
 
+const BRIGHT_ORANGE = {
+  saturation: 95,
+  lightness: 62,
+} as const
+
+const DULL_ORANGE = {
+  saturation: 35,
+  lightness: 25,
+}
 interface Props {
   row: number
   column: number
   totalColumns: number
   x: number
   y: number
+  getAnimationDirection: () => number
+  getDarkMode: () => boolean
   getRandom: () => SeededRandom
-  animationDirection: { current: number }
 }
 
 export class Block {
@@ -38,14 +48,25 @@ export class Block {
   )
   #lightIntensity = fromStore(this.#tweenedValues.lightIntensity)
 
+  #getAnimationDirection = () => 1
+  #getDarkMode = () => false
   #getRandom = () => new SeededRandom(0)
-  #animationDirection = { current: -1 }
+
   #offset = $derived(
-    this.#animationDirection.current > 0 ? this.#totalColumns - this.column : this.column,
+    this.#getAnimationDirection() > 0 ? this.#totalColumns - this.column : this.column,
   )
   #delay = $derived(this.#getRandom().numberBetween(0, 25) + 15 * this.#offset)
 
-  constructor({ row, column, totalColumns, x, y, getRandom, animationDirection }: Props) {
+  constructor({
+    row,
+    column,
+    totalColumns,
+    x,
+    y,
+    getAnimationDirection,
+    getRandom,
+    getDarkMode,
+  }: Props) {
     this.row = row
     this.column = column
     this.#totalColumns = totalColumns
@@ -53,7 +74,8 @@ export class Block {
     this.#y = y
     this.#z = fromStore(this.#tweenedValues.z)
     this.#getRandom = getRandom
-    this.#animationDirection = animationDirection
+    this.#getDarkMode = getDarkMode
+    this.#getAnimationDirection = getAnimationDirection
   }
 
   get position() {
@@ -76,17 +98,22 @@ export class Block {
     this.#tweenedValues.z.set(value, { delay: this.#delay })
   }
 
-  setColour(orange: boolean) {
+  setColour(highlight: boolean) {
     // The random generator is basically a react hook (fml). If you call
     // it a different number of times you're going to going to get different
-    // values. This is obvious when y ou think about it, but it is also annoying.
+    // values. This is obvious when you think about it, but it is also annoying.
     const extrudeBy = this.#getRandom().numberBetween(0.03, 0.07)
 
-    if (orange) {
+    if (highlight) {
       this.extrude(extrudeBy)
-      this.#tweenedValues.saturation.set(95, { delay: this.#delay })
-      this.#tweenedValues.lightness.set(62, { delay: this.#delay })
-      this.#tweenedValues.lightIntensity.set(5, { delay: this.#delay })
+
+      const dark = this.#getDarkMode()
+      const intensity = dark ? 2 : 5
+      const { saturation, lightness } = dark ? DULL_ORANGE : BRIGHT_ORANGE
+
+      this.#tweenedValues.saturation.set(saturation, { delay: this.#delay })
+      this.#tweenedValues.lightness.set(lightness, { delay: this.#delay })
+      this.#tweenedValues.lightIntensity.set(intensity, { delay: this.#delay })
     } else {
       this.extrude(0)
       this.#tweenedValues.saturation.set(0, { delay: this.#delay })
@@ -97,7 +124,7 @@ export class Block {
 
   rotate() {
     this.#tweenedValues.rotation.update(
-      (rotation) => rotation - 1.5708 * this.#animationDirection.current,
+      (rotation) => rotation - 1.5708 * this.#getAnimationDirection(),
       {
         delay: this.#delay,
       },

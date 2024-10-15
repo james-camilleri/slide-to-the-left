@@ -15,7 +15,7 @@
 
   const direction = createDirectionCalculator(() => currentSlideIndex)
 
-  let dark = $derived(!!code || explicitDark)
+  let dark = $derived(!!(code || explicitDark))
   let random = $derived(
     new SeededRandom([currentSlideIndex, h1 ?? '', h2 ?? '', code ?? ''].join('')),
   )

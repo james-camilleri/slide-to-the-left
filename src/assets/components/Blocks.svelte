@@ -51,8 +51,9 @@
               column: _x,
               row: _y,
               totalColumns: blocksX,
+              getAnimationDirection: () => direction.current,
+              getDarkMode: () => dark,
               getRandom: () => random,
-              animationDirection: direction,
             }),
           )
         }
@@ -63,7 +64,7 @@
   )
 
   $effect(() => {
-    const orangeBlocks = random
+    const highlightedBlocks = random
       .shuffleArray([
         // Top quarter.
         [random.integerBetween(2, blocksX - 2), random.integerBetween(2, blocksY / 4)].join(':'),
@@ -85,7 +86,7 @@
     blocks.forEach((block) => {
       const index = [block.column, block.row].join(':')
       block.rotate()
-      block.setColour(!dark && orangeBlocks.includes(index))
+      block.setColour(highlightedBlocks.includes(index))
     })
   })
 </script>
