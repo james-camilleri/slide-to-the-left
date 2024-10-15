@@ -3,6 +3,7 @@ import type { Slide } from '$lib/slide'
 import Background from '$assets/code/background.svelte?raw'
 import CodeTemplate from '$assets/code/code-template.svelte?raw'
 // import DirectionCalculator from '$assets/code/direction.svelte.ts?raw'
+import PartyKitServer from '$assets/code/partykit-server?raw'
 import PseudorandomGenerator from '$assets/code/pseudorandom-generator?raw'
 import SlideList from '$assets/code/slide-list?raw'
 import SlideView from '$assets/code/slide-view.svelte?raw'
@@ -197,6 +198,10 @@ export default [
 
   {
     h2: 'PartyKit server',
+    code: {
+      source: PartyKitServer,
+      language: 'ts',
+    },
   },
   {
     h2: 'remote',
