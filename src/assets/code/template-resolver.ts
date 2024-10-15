@@ -8,6 +8,8 @@ const templates = {
   CentredTitle,
   Code,
   Default,
+  // ...
+  // MOAR TEMPLATES
 } as const
 
 export type TemplateName = keyof typeof templates

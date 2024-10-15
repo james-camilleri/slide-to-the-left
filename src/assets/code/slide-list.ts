@@ -26,7 +26,6 @@ export default [
       'transitions',
       'animated slide backdrops',
       'remote control & presenter view',
-      'making this presentation walkthrough',
     ],
   },
   {
@@ -37,4 +36,5 @@ export default [
       language: 'ts',
     },
   },
+  // ...and so on and so forth.
 ] satisfies Slide[]

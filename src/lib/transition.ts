@@ -10,8 +10,11 @@ export type TransitionFunction = (
 export type SlideTransitionsConfig = { in: TransitionFunction; out: TransitionFunction }
 export type TransitionConfigFunction = (direction: number) => SlideTransitionsConfig
 
-// Add your transitions here.
+const options = { easing: quadOut, duration: 500 }
+
 export const transition: TransitionConfigFunction = (direction) => ({
-  in: (node) => fly(node, { x: `${100 * direction}%`, duration: 500, easing: quadOut }),
-  out: (node) => fly(node, { x: `${100 * direction * -1}%`, duration: 500, easing: quadOut }),
+  // Use the navigation direction to figure out
+  // if we should slide to the left or not. 🕺
+  in: (node) => fly(node, { x: `${100 * direction}%`, ...options }),
+  out: (node) => fly(node, { x: `${100 * direction * -1}%`, ...options }),
 })
