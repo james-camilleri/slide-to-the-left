@@ -46,7 +46,7 @@ class Remote {
     const storedData = localStorage.getItem(KEY)
     const { presentationId, secret, timestamp } =
       storedData ? (JSON.parse(storedData) as Session) : {}
-    if (timestamp && timestamp < Date.now() - MILLISECONDS_IN_24_HRS) {
+    if (timestamp && Date.now() - timestamp < MILLISECONDS_IN_24_HRS) {
       return { presentationId, secret }
     }
   }

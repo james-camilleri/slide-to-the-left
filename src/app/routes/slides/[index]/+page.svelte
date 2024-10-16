@@ -14,21 +14,23 @@
   import { beforeNavigate, goto } from '$app/navigation'
   import { page } from '$app/stores'
 
-  const imageUrls = slides.reduce((imageUrls, slide) => {
-    const { image, images } = slide
-    if (image) {
-      imageUrls.push(image)
-    }
-
-    if (images) {
-      imageUrls.push(...(Array.isArray(images) ? images : [images]))
-    }
-
-    return imageUrls
-  }, [] as string[])
-
-  // Prefetch image URLs for caching.
   onMount(() => {
+    // Initialise host immediately, to reconnect if the app is refreshed.
+    remote.host(data.slideIndex, slides.length, updateSlideUrl)
+
+    // Prefetch image URLs for caching.
+    const imageUrls = slides.reduce((imageUrls, slide) => {
+      const { image, images } = slide
+      if (image) {
+        imageUrls.push(image)
+      }
+
+      if (images) {
+        imageUrls.push(...(Array.isArray(images) ? images : [images]))
+      }
+
+      return imageUrls
+    }, [] as string[])
     imageUrls.map((url) => fetch(url))
   })
 
