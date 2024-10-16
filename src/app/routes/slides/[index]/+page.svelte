@@ -92,6 +92,14 @@
         break
       }
 
+      // Show notes.
+      case 'n': {
+        const { presentationId } = remote.host(data.slideIndex, slides.length, updateSlideUrl)
+
+        window.open(`http://${$page.url.host}/notes/${presentationId}/${currentIndex}`)
+        break
+      }
+
       // Presenter view.
       case 'p': {
         const { presentationId, secret } = remote.host(
