@@ -33,7 +33,7 @@ export default [
   },
   {
     h1: 'slide to the left',
-    h2: 'A presentation about writing presentations<br>with **SvelteKit** & **PartyKit**.',
+    h2: 'A presentation about making presentations<br>with **SvelteKit** & **PartyKit**.',
     notes: [
       'Inevitably, whenever I need to make some slides, I end up over-engineering some hacky solution.',
       'This is a talk about a standard template for slides I eventually settled on, powered by SvelteKit (of course) and using PartyKit for synchronising the deck across multiple devices.',
