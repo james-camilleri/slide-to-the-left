@@ -259,6 +259,15 @@ export default [
     ],
   },
   {
+    h1: 'find these slides',
+    h2: 'wallow in my questionable source code',
+    text: [
+      'slide-to-the-left.slides.james.mt',
+      'github.com/james-camilleri/slide-to-the-left',
+      'github.com/james-camilleri/slides',
+    ],
+  },
+  {
     h1: 'get in touch',
     h2: '(talk nerdy to me)',
     text: [
