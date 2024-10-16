@@ -14,9 +14,12 @@ import TemplateResolver from '$assets/code/template-resolver?raw'
 import TitleTemplate from '$assets/code/title-template.svelte?raw'
 import Transitions from '$assets/code/transition-config?raw'
 import CloudflareDurableObjects from '$assets/images/cloudflare-durable-objects.webp'
+import PartyKit from '$assets/images/partykit.webp'
 import RemoteStructureDiagram2 from '$assets/images/remote-structure-2.svg'
 import RemoteStructureDiagram from '$assets/images/remote-structure.svg'
+import RevealJs from '$assets/images/revealjs.webp'
 import StructureDiagram from '$assets/images/structure-diagram.svg'
+import Threlte from '$assets/images/threlte.webp'
 
 export default [
   { template: 'Start' },
@@ -37,7 +40,9 @@ export default [
     ],
   },
   {
-    iframe: 'https://revealjs.com/',
+    image: RevealJs,
+    fullscreen: true,
+    // iframe: 'https://revealjs.com/',
     notes: [
       'Initially used Reveal.js, which is a great tool.',
       "It's SPA-based however, so it doesn't really play nice with SvelteKit's more advanced functionality.",
@@ -133,7 +138,9 @@ export default [
     ],
   },
   {
-    iframe: 'https://threlte.xyz//',
+    image: Threlte,
+    fullscreen: true,
+    // iframe: 'https://threlte.xyz//',
     notes: ['Shoutout to the Threlte team for building such a nifty library.'],
   },
   {
@@ -200,7 +207,9 @@ export default [
     h2: 'live synchronised state with web sockets and PartyKit',
   },
   {
-    iframe: 'https://partykit.io',
+    image: PartyKit,
+    fullscreen: true,
+    // iframe: 'https://partykit.io',
     notes: [
       '"Serverless" library built on Cloudflare\'s Durable Objects.',
       'Allows multiple instances of a serverless app to share state.',
