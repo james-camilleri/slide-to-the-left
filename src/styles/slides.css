@@ -22,7 +22,9 @@
 }
 
 .slide {
-  padding: 3em;
+  --padding: 3em;
+
+  padding: var(--padding);
   font-size: var(--base-font-size);
   color: var(--foreground);
 

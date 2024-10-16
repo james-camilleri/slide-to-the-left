@@ -27,15 +27,13 @@
 
   // Check if the image has a transparent background.
   onMount(() => {
-    if (!canvasElement || !imageElement) {
-      return
-    }
-
-    if (imageElement.complete) {
+    if (imageElement?.complete && canvasElement) {
       imageFrame = !hasTransparentPixels(canvasElement, imageElement)
     } else {
-      imageElement.addEventListener('load', () => {
-        imageFrame = !hasTransparentPixels(canvasElement, imageElement)
+      imageElement?.addEventListener('load', () => {
+        if (canvasElement && imageElement) {
+          imageFrame = !hasTransparentPixels(canvasElement!, imageElement)
+        }
       })
     }
   })
@@ -64,8 +62,7 @@
     object-fit: contain;
 
     &.frame {
-      filter: drop-shadow(0.3rem 0.3rem 0 var(--dark-blue))
-        drop-shadow(0.3rem 0.3rem 0 var(--light));
+      filter: drop-shadow(0.5em 0.5em 0 var(--primary));
     }
   }
 

@@ -13,6 +13,7 @@ export default class Server implements Party.Server {
 
   constructor(readonly room: Party.Room) {}
 
+  // This is called when any client connects to the PartyKit server.
   onConnect(connection: Party.Connection, { request }: Party.ConnectionContext) {
     const secret = new URL(request.url).searchParams.get('secret')
     const totalSlides = new URL(request.url).searchParams.get('totalSlides')
@@ -30,14 +31,16 @@ export default class Server implements Party.Server {
       this.#authorised.add(connection.id)
     }
 
-    // Notify all other clients that a new connection has been made.
-    // This is currently only used to hide the connection QR code on the main presentation.
+    // Notify all other clients that a new connection
+    // has been made. This is currently only used to hide
+    // the connection QR code on the main presentation.
     this.room.broadcast(JSON.stringify({ status: 'new-connection' }), [connection.id])
 
     // Propagate the current slide to any collecting client.
     connection.send(JSON.stringify({ slide: this.#currentSlide }))
   }
 
+  // This is called for each message sent to the server.
   onMessage(message: string, sender: Party.Connection) {
     // Block unauthorised clients from updating the current slide.
     if (!this.#authorised.has(sender.id)) {

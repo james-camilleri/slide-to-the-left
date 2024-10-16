@@ -17,6 +17,7 @@ export interface Slide {
   iframe?: string
   image?: string
   images?: string | string[]
+  fullscreen?: boolean
 
   template?: TemplateName
   notes?: string[]

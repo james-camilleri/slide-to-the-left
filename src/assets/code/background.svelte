@@ -14,7 +14,8 @@
   const BLOCK_SIZE = 0.37
 
   // Encapsulated Svelte 5 state.
-  const direction = createDirectionCalculator(() => currentSlideIndex)
+  const getDirection = createDirectionCalculator(() => currentSlideIndex)
+  const direction = $derived(getDirection.current)
 
   let dark = $derived(!!code || explicitDark)
   let random = $derived(

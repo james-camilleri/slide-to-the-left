@@ -52,21 +52,31 @@ class Remote {
   }
 
   #setupSession() {
+    // If we've already got a presentation ID
+    // and secret this is a waste of time.
     if (this.#presentationId && this.#secret) {
       return
     }
 
+    // Restore the current session from local storage if it exists.
     const { presentationId, secret } = this.#restoreSession() ?? {}
+
     if (presentationId && secret) {
+      // Use restored id & secret if we have them.
       this.#presentationId = presentationId
       this.#secret = secret
     } else {
+      // Or create new ones if we don't.
       this.#presentationId = crypto.randomUUID()
       this.#secret = crypto.randomUUID().replaceAll('-', '')
+
+      // Store session to local storage so the app will automatically
+      // reconnect if it needs to be refreshed for some reason.
       this.#storeSession(this.#presentationId, this.#secret)
     }
   }
 
+  // Keep track of whether an active remote session exists.
   active = $derived(this.#socketState === SOCKET_STATE.CONNECTED)
 
   /**
@@ -93,23 +103,31 @@ class Remote {
     this.#socketState = SOCKET_STATE.CONNECTING
     this.#setupSession()
 
+    // This handler function will be called whenever the slide changes.
     if (onSlideChange) {
       this.#onSlideChange = onSlideChange
     }
 
+    // This is the magic that sets up the connection
+    // to the PartyKit server. All connections made
+    // with the same room will connect to the same
+    // shared state. Any additional connection parameters
+    // are passed along in the query.
     const ws = new PartySocket({
       host: PUBLIC_PARTYKIT_HOST || 'localhost:1999',
       room: this.#presentationId,
       query: { secret: this.#secret, totalSlides: totalNoOfSlides.toString() },
     })
 
+    // Register a send function and respond with the current
+    // slide once a new connection is established.
     ws.onopen = () => {
       this.#socketState = SOCKET_STATE.CONNECTED
       this.#send = (index: number) => ws.send(JSON.stringify({ slide: index }))
-
-      ws.send(JSON.stringify({ slide: currentSlideIndex }))
+      this.#send(currentSlideIndex)
     }
 
+    // Update the in-memory slide state when an update is received.
     ws.onmessage = (e: MessageEvent<string>) => {
       const { slide, status } = JSON.parse(e.data) as Message
 
@@ -117,6 +135,8 @@ class Remote {
         this.#onSlideChange(slide)
       }
 
+      // This is currently just used to hide
+      // the QR code after a remote connects.
       if (status) {
         this.#onStatusUpdate(status)
       }

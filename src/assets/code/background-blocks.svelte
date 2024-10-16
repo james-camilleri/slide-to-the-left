@@ -6,7 +6,7 @@
   import { tweened } from 'svelte/motion'
   import { fromStore } from 'svelte/store'
 
-  import { Block } from './Block.svelte'
+  import { Block } from './reactive-block'
 
   const PADDING = 0
   const ASPECT_RATIO = 16 / 8.5
@@ -79,17 +79,23 @@
     // Pick three random cubes on the outer edges of the scene to highlight.
     const highlightedBlocks = random
       .shuffleArray([
-        // Top quarter.
-        [random.integerBetween(2, blocksX - 2), random.integerBetween(2, blocksY / 4)].join(':'),
-        // Bottom quarter.
         [
+          // Top quarter.
+          random.integerBetween(2, blocksX - 2),
+          random.integerBetween(2, blocksY / 4)
+        ].join(':'),
+        [
+          // Bottom quarter.
           random.integerBetween(2, blocksX - 2),
           random.integerBetween((blocksY / 4) * 3, blocksY - 2),
         ].join(':'),
-        // Left quarter.
-        [random.integerBetween(2, blocksX / 4), random.integerBetween(2, blocksY - 2)].join(':'),
-        // Right quarter.
         [
+          // Left quarter.
+          random.integerBetween(2, blocksX / 4),
+          random.integerBetween(2, blocksY - 2)
+        ].join(':'),
+        [
+          // Right quarter.
           random.integerBetween((blocksX / 4) * 3, blocksX - 2),
           random.integerBetween(2, blocksY - 2),
         ].join(':'),
@@ -121,7 +127,11 @@
   {#each blocks as block}
     <!-- Add each instance of the block to the scene
      with the correct position, rotation, and colour. -->
-    <Instance position={block.position} rotation={[0, block.rotation, 0]} color={block.colour} />
+    <Instance
+      position={block.position}
+      rotation={[0, block.rotation, 0]}
+      color={block.colour} 
+    />
     <!-- If a cube has an associated light intensity (i.e. it's glowing),
      add a light at the same position. Selective addition of these lights
      is important, as more than a handful of lights immediately tanks

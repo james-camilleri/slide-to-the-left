@@ -13,10 +13,15 @@
   const NO_OF_BLOCKS = 20
   const BLOCK_SIZE = 0.37
 
-  const direction = createDirectionCalculator(() => currentSlideIndex)
+  const getDirection = createDirectionCalculator(() => currentSlideIndex)
+  const direction = $derived(getDirection.current)
 
   let dark = $derived(!!(code || explicitDark))
   let random = $derived(
+    // Predictable randomness.
+    // Use the slide contents to seed the generator,
+    // ensuring that each slide will always get the
+    // same sequence of random numbers.
     new SeededRandom([currentSlideIndex, h1 ?? '', h2 ?? '', code ?? ''].join('')),
   )
 </script>

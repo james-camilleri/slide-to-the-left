@@ -39,7 +39,12 @@ export class Block {
   #saturation = fromStore(this.#tweenedValues.saturation)
   #lightness = fromStore(this.#tweenedValues.lightness)
   #colour = $derived(
-    'hsl(12,' + [`${this.#saturation.current}%`, `${this.#lightness.current}%`].join(',') + ')',
+    'hsl(12,' +
+    [
+      `${this.#saturation.current}%`,
+      `${this.#lightness.current}%`
+    ].join(',') +
+    ')',
   )
   #lightIntensity = fromStore(this.#tweenedValues.lightIntensity)
 

@@ -6,6 +6,7 @@ import Code from './Code.svelte'
 import Component from './Component.svelte'
 import Default from './Default.svelte'
 import End from './End.svelte'
+import FullscreenImage from './FullscreenImage.svelte'
 import IFrame from './IFrame.svelte'
 import ImageGrid from './ImageGrid.svelte'
 import Start from './Start.svelte'
@@ -17,6 +18,7 @@ const templates = {
   Component,
   Default,
   End,
+  FullscreenImage,
   IFrame,
   ImageGrid,
   Start,
@@ -43,6 +45,10 @@ export function resolveTemplate(slide: Slide) {
 
   if (slide.images && Array.isArray(slide.images)) {
     return templates.ImageGrid
+  }
+
+  if (slide.image && slide.fullscreen) {
+    return templates.FullscreenImage
   }
 
   return templates[slide.template ?? 'Default'] ?? templates.Default
