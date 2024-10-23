@@ -24,8 +24,8 @@ importers:
         specifier: 8.0.0-next.17
         version: 8.0.0-next.17(svelte@5.0.0-next.264)(three@0.169.0)
       '@threlte/extras':
-        specifier: 9.0.0-next.23
-        version: 9.0.0-next.23(@types/three@0.169.0)(svelte@5.0.0-next.264)(three@0.169.0)
+        specifier: 9.0.0-next.28
+        version: 9.0.0-next.28(@types/three@0.169.0)(svelte@5.0.0-next.264)(three@0.169.0)
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
@@ -573,8 +573,8 @@ packages:
       svelte: '>=5'
       three: '>=0.155'
 
-  '@threlte/extras@9.0.0-next.23':
-    resolution: {integrity: sha512-a8++O1I0agheWlauGMuulE0bdDLD9sFJsP/WOY0DSp4PNCzZtSqL5ijeW3LGB9tP1kn1Dy/PALzN+KyAl4exKQ==}
+  '@threlte/extras@9.0.0-next.28':
+    resolution: {integrity: sha512-vsDvKcRtSlkWVDwCeJ1eONZX45K+ySSPpzmGYJx82iahPDQc4R+Igo8JA/sxRSIAGL3NvmnMiHIzf1xzuT9jYA==}
     peerDependencies:
       svelte: '>=5'
       three: '>=0.155'
@@ -2778,7 +2778,7 @@ snapshots:
       svelte: 5.0.0-next.264
       three: 0.169.0
 
-  '@threlte/extras@9.0.0-next.23(@types/three@0.169.0)(svelte@5.0.0-next.264)(three@0.169.0)':
+  '@threlte/extras@9.0.0-next.28(@types/three@0.169.0)(svelte@5.0.0-next.264)(three@0.169.0)':
     dependencies:
       '@threejs-kit/instanced-sprite-mesh': 2.4.7(@types/three@0.169.0)(three@0.169.0)
       svelte: 5.0.0-next.264
